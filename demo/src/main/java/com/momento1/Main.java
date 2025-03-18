@@ -11,8 +11,8 @@ public class Main {
         double consumo = entradaDatos.nextDouble();
         System.out.println("Ingrese el costo por kilovatio: ");
         double costo = entradaDatos.nextDouble();
-        System.out.println("Ingrese la categoria del usuario 1 = Residencial y 2 = Comercial: ");
-        int usuario = entradaDatos.nextInt();
+        System.out.println("Ingrese la categoria del usuario R = Residencial y C = Comercial: ");
+        String usuario = entradaDatos.next();
 
         double costoInicial = (consumo * costo);
 
@@ -30,12 +30,12 @@ public class Main {
 
         // Costo final.
 
-        if (usuario == 1 && consumo >= 500) {
+        if (usuario.equals("R") && consumo >= 500) {
             double total = costoInicial * 1.10;
-            System.out.println("El costo final es: " + total);
-        } else if (usuario == 2 && consumo >= 100 && consumo < 500) {
+            System.out.println("El costo final tiene un 10% de incremento el total a pagar es: " + total);
+        } else if (usuario.equals("C") && consumo >= 100 && consumo < 500) {
             double total = costoInicial * 1.05;
-            System.out.println("El costo final es: " + total);
+            System.out.println("El costo final tiene un 5% de incremento el total a pagar es: " + total);
         } else{
             System.out.println("Por su consumo no tiene incremento. El valor a final es: " + costoInicial);
         }
